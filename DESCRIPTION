@@ -6,5 +6,6 @@ Authors@R:
 Description: This package provides R Markdown templates for common document types used grad students, like academic papers, presentations (forthcoming), and memos (forthcoming).
 License: MIT + file LICENSE
 Encoding: UTF-8
+Depends: R (>=4.5.1)
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
