@@ -1,18 +1,87 @@
 ---
-title: "Template Title"
-author: "Your Name"
-date: "The Date"
-output: output_format
+output: 
+  pdf_document:
+    latex_engine: xelatex
+    toc: false
+    number_sections: true
+    keep_tex: true
+documentclass: article
+bibliography: references.json
+papersize: a4paper
+fontsize: 11pt
+geometry: margin=1in
+params:
+  titlepage: true
+  title_text: "Paper Title"
+  author_name: "Your Name"
+  author_affiliation: "Department, University"
+  thanks: "Acknowledgments, IRB status, etc."
+  abstract_text: "Type your abstract here."
+header-includes:
+  - \usepackage[symbol]{footmisc}
+  - \usepackage{setspace}
+  - \usepackage{indentfirst}
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+\begin{titlepage}
+\thispagestyle{empty}
 
-## Adding an RMarkdown Template
+\begin{center}
+\vspace*{3cm}
 
-This file is what a user will see when they select your template. Make sure that you update the fields in the yaml header. In particular you will want to update the `output` field to whatever format your template requires.
+{\LARGE `r params$title_text`\footnote{Acknowledgments, IRB status, etc.} \par}
 
-This is a good place to demonstrate special features that your template provides. Ideally it should knit out-of-the-box, or at least contain clear instructions as to what needs changing.
+\vspace{2cm}
 
-Finally, be sure to remove this message!
+{\large `r params$author_name`\footnote{Position, Department, University. Email: you@email.com} \par}
+
+\vspace{0.5cm}
+
+{\large `r params$author_affiliation` \par}
+
+\vspace{1.5cm}
+
+{\large `r format(Sys.Date(), "%B %d, %Y")` \par}
+\vspace{1.5cm}
+
+\begin{minipage}{0.9\textwidth}
+\textbf{Abstract:}  
+`r params$abstract_text`
+
+\vspace{0.5cm}
+
+Word Count: `r wordcountaddin::word_count()`
+\end{minipage}
+
+\end{center}
+\end{titlepage}
+
+\newpage
+
+\doublespacing
+\setlength{\parindent}{15pt}
+
+This will be your introduction. There is no section header, because generally introductions should not be labeled "Introduction"---it's at the start, and it's telling us what we're reading, we already know we're being introduced! 
+
+\section*{Literature Review}
+
+Literature gets reviewed here. Arguments get made. @xieMarkdownDefinitiveGuide2018 Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
+
+\section*{Methods}
+
+Methods are described here. Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
+
+\section*{Results}
+
+Yay! Your research has results! Describe them here. Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
+
+\section*{Conclusion}
+Conclude your paper here. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
+
+\newpage
+
+\section*{References}
+

@@ -1,0 +1,33 @@
+[
+	{
+		"id": "xieMarkdownDefinitiveGuide2018",
+		"type": "book",
+		"event-place": "Boca Raton, Florida",
+		"ISBN": "978-1-138-35933-8",
+		"publisher": "Chapman and Hall/CRC",
+		"publisher-place": "Boca Raton, Florida",
+		"title": "R Markdown: The Definitive Guide",
+		"URL": "https://bookdown.org/yihui/rmarkdown",
+		"author": [
+			{
+				"family": "Xie",
+				"given": "Yihui"
+			},
+			{
+				"family": "Allaire",
+				"given": "J.J."
+			},
+			{
+				"family": "Grolemund",
+				"given": "Garrett"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2018"
+				]
+			]
+		}
+	}
+]
