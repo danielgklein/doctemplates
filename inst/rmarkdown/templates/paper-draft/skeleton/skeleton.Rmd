@@ -5,6 +5,7 @@ output:
     toc: false
     number_sections: true
     keep_tex: true
+    fig_caption: true
 documentclass: article
 bibliography: references.json
 papersize: a4paper
@@ -24,7 +25,7 @@ header-includes:
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = TRUE, fig.align = "center")
 ```
 \begin{titlepage}
 \thispagestyle{empty}
